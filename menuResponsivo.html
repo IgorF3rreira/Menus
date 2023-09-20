@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    body {
+        margin: 0px;
+        padding: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    .topnav a {
+        color: #fff;
+        padding: 14px;
+        text-decoration: none;
+        float: left;
+        display: block;
+        text-align: center;
+        font-size: 14px;
+
+    }
+
+    .topnav .active {
+        background-color: #1e90ff;
+    }
+
+    .topnav a.icon {
+        display: none;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: #000;
+
+    }
+
+    @media only screen and (max-width: 600px) {
+
+        /* esconder os A usando o not e depois  falando pra não esconder o primeiro */
+        .topnav a:not(:first-child) {
+            display: none;
+
+        }
+
+        .topnav a.icon {
+            float: right;
+            display: block;
+        }
+        .topnav.responsive{
+            position: relative;
+    
+        }
+        .topnav.responsive a{
+            float: none;
+            clear: both;
+            display: block;
+            text-align: left;
+            border-bottom: 1px solid white;
+        }
+        .topnav.responsive a.icon{
+            position: absolute;
+            right: 0px;
+            top: 0px;
+        }
+    }
+</style>
+
+<body>
+    <nav>
+        <div class="topnav" id="my-Topnav">
+            <a href="#" class="active">LOGO</a>
+            <a href="#">Serviços</a>
+            <a href="#">Sobre</a>
+            <a href="#">Cursos</a>
+            <a href="#">Galeria</a>
+            <a href="#">Contato</a>
+            <a href="#" class="icon" onclick="myFunction();">
+                <i class="fa-solid fa-bars"></i>
+            </a>
+
+        </div>
+    </nav>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById('my-Topnav');
+            if (x.className == 'topnav'){
+                x.className += ' responsive';
+
+            }else{
+                x.className = 'topnav';
+            }
+        }
+    </script>
+</body>
+</html>
